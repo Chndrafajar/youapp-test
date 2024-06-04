@@ -1,0 +1,5 @@
+fitur = update profile , get profile
+get profile = down
+createProfile = down, bug=> img
+create interest = get data => bug
+get horoscape = error
