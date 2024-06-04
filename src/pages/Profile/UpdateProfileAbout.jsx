@@ -135,7 +135,9 @@ export default function UpdateProfileAbout() {
               <img src={selectedImage} alt="" />
               <div className="info-profile-user">
                 <div className="items-profile">
-                  <h5>{profileData?.username}, 28</h5>
+                  <h5>
+                    {profileData?.username}, {profileData?.birthday}
+                  </h5>
                   <div className="info-profile-zodiac">
                     {profileData?.horoscope && (
                       <div className="info-zodiac-item">
@@ -158,7 +160,9 @@ export default function UpdateProfileAbout() {
               <img src={thumbnail_image} alt="" />
               <div className="info-profile-user-thumbnail">
                 <div className="items-profile">
-                  <h5>{profileData?.username}, 28</h5>
+                  <h5>
+                    {profileData?.username}, {profileData?.birthday}
+                  </h5>
                   <div className="info-profile-zodiac">
                     {profileData?.horoscope && (
                       <div className="info-zodiac-item">
