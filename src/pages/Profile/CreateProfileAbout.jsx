@@ -154,7 +154,7 @@ export default function CreateProfileAbout() {
             </div>
             <div className="input-about">
               <label>Display name:</label>
-              <input type="text" name="name" placeholder="Enter Name" value={formData.name} onChange={handleChange} />
+              <input type="text" name="name" placeholder="Enter Name" value={formData.name} onChange={handleChange} required />
             </div>
             {/* <div className="input-about">
               <label>Gender:</label>
@@ -166,7 +166,7 @@ export default function CreateProfileAbout() {
             </div> */}
             <div className="input-about">
               <label>Birthday:</label>
-              <input type="date" name="birthday" value={formData.birthday} onChange={handleChange} />
+              <input type="date" name="birthday" value={formData.birthday} onChange={handleChange} required />
             </div>
             <div className="input-about">
               <label>Horoscope:</label>
@@ -178,11 +178,11 @@ export default function CreateProfileAbout() {
             </div>
             <div className="input-about">
               <label>Height:</label>
-              <input type="number" name="height" placeholder="Add Height" value={formData.height} onChange={handleChange} />
+              <input type="number" name="height" placeholder="Add Height" value={formData.height} onChange={handleChange} required />
             </div>
             <div className="input-about">
               <label>Weight:</label>
-              <input type="number" name="weight" placeholder="Add Weight" value={formData.weight} onChange={handleChange} />
+              <input type="number" name="weight" placeholder="Add Weight" value={formData.weight} onChange={handleChange} required />
             </div>
           </form>
         </div>
