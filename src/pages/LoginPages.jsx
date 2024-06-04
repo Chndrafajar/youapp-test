@@ -5,7 +5,7 @@ import InputPassword from '../components/Input/InputPassword';
 import Button from '../components/Button/Button';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/auth';
-import axiosInstance from '../context/axiosInstance';
+import axiosInstance from '../config/axiosInstance';
 import swal from 'sweetalert';
 
 export default function LoginPages() {

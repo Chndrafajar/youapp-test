@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaChevronLeft, FaPlus } from 'react-icons/fa6';
 import thumbnail_image from '../../assets/thumbnail_image.png';
-import axiosInstance from '../../context/axiosInstance';
+import axiosInstance from '../../config/axiosInstance';
 import { useAuth } from '../../context/auth';
 import { NavLink, useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
@@ -224,11 +224,11 @@ export default function UpdateProfileAbout() {
             </div>
             <div className="input-about">
               <label>Horoscope:</label>
-              <input type="text" name="horoscope" placeholder="--" value={profileData?.horoscope} onChange={handleChange} disabled />
+              <input type="text" name="horoscope" placeholder="--" value={profileData?.horoscope} onChange={handleChange} readOnly />
             </div>
             <div className="input-about">
               <label>Zodiac:</label>
-              <input type="text" name="zodiac" placeholder="--" value={profileData?.zodiac} onChange={handleChange} disabled />
+              <input type="text" name="zodiac" placeholder="--" value={profileData?.zodiac} onChange={handleChange} readOnly />
             </div>
             <div className="input-about">
               <label>Height:</label>

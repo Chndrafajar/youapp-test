@@ -3,7 +3,7 @@ import { FaChevronLeft } from 'react-icons/fa6';
 import thumbnail_image from '../../assets/thumbnail_image.png';
 import { useAuth } from '../../context/auth';
 import { NavLink, useNavigate } from 'react-router-dom';
-import axiosInstance from '../../context/axiosInstance';
+import axiosInstance from '../../config/axiosInstance';
 import { IoClose } from 'react-icons/io5';
 
 export default function ProfilePages() {

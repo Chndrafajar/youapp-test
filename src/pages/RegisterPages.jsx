@@ -4,7 +4,7 @@ import InputComponents from '../components/Input/InputComponents';
 import InputPassword from '../components/Input/InputPassword';
 import Button from '../components/Button/Button';
 import { NavLink, useNavigate } from 'react-router-dom';
-import axiosInstance from '../context/axiosInstance';
+import axiosInstance from '../config/axiosInstance';
 
 export default function RegisterPages() {
   const [email, setEmail] = useState('');

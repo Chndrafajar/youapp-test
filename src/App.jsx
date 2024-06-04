@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import nprogress from 'nprogress'; // Import nprogress
 import 'nprogress/nprogress.css'; // Import nprogress CSS
 
@@ -9,10 +9,19 @@ import ProfilePages from './pages/Profile/ProfilePages';
 import CreateProfileAbout from './pages/Profile/CreateProfileAbout';
 import UpdateProfileAbout from './pages/Profile/UpdateProfileAbout';
 import CreateProfileInterest from './pages/Profile/CreateProfileInterest';
+import { useAuth } from './context/auth';
+
+function Layout() {
+  const [auth] = useAuth();
+  const location = useLocation();
+
+  return auth?.access_token ? <Outlet /> : <Navigate to="/" state={{ from: location }} replace />;
+}
 
 function App() {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
+  const [auth] = useAuth();
 
   useEffect(() => {
     const handleStart = () => {
@@ -25,15 +34,12 @@ function App() {
       setLoading(false);
     };
 
-    // Start loading when location changes
     handleStart();
 
-    // Stop loading after a delay to simulate page load
     const timer = setTimeout(() => {
       handleStop();
-    }, 500); // Adjust the delay as needed
+    }, 500);
 
-    // Cleanup function to stop loading
     return () => {
       clearTimeout(timer);
       handleStop();
@@ -44,12 +50,15 @@ function App() {
     <>
       {loading && <div className="loading-spinner"></div>}
       <Routes>
+        <Route element={<Layout />}>
+          <Route path="/profile" element={<ProfilePages />} />
+          <Route path="/create-profile-about" element={<CreateProfileAbout />} />
+          <Route path="/update-profile-about" element={<UpdateProfileAbout />} />
+          <Route path="/create-profile-interest" element={<CreateProfileInterest />} />
+        </Route>
+
         <Route path="/" element={<LoginPages />} />
         <Route path="/register" element={<RegisterPages />} />
-        <Route path="/profile" element={<ProfilePages />} />
-        <Route path="/create-profile-about" element={<CreateProfileAbout />} />
-        <Route path="/update-profile-about" element={<UpdateProfileAbout />} />
-        <Route path="/create-profile-interest" element={<CreateProfileInterest />} />
       </Routes>
     </>
   );

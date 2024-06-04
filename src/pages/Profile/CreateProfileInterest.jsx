@@ -3,7 +3,7 @@ import { FaChevronLeft } from 'react-icons/fa6';
 import { IoClose } from 'react-icons/io5';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth';
-import axiosInstance from '../../context/axiosInstance';
+import axiosInstance from '../../config/axiosInstance';
 import swal from 'sweetalert';
 
 export default function CreateProfileInterest() {
