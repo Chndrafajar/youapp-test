@@ -65,7 +65,7 @@ export default function LoginPages() {
           <div className="card-auth">
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
-              <InputComponents placeholder="Enter Username/Email" type="email" style={{ marginBottom: '12px', width: '100%' }} value={email} handleChange={(e) => setEmail(e.target.value)} />
+              <InputComponents placeholder="Enter Email" type="email" style={{ marginBottom: '12px', width: '100%' }} value={email} handleChange={(e) => setEmail(e.target.value)} />
               <InputPassword placeholder="Enter Password" style={{ width: '100%' }} value={password} handleChange={(e) => setPassword(e.target.value)} type="password" />
               {loading ? (
                 <Button type="submit" style={{ marginTop: '30px', width: '100%' }}>
