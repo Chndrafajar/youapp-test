@@ -116,6 +116,15 @@ export default function UpdateProfileAbout() {
     fetchData();
   }, [auth]);
 
+  const getTanggal = (datetime) => {
+    if (datetime) {
+      const datePart = datetime.split('T')[0];
+      const [year, month, day] = datePart.split('-');
+      return day;
+    }
+    return '';
+  };
+
   return (
     <section className="profile-about">
       <div className="container">
@@ -134,7 +143,8 @@ export default function UpdateProfileAbout() {
               <div className="info-profile-user">
                 <div className="items-profile">
                   <h5>
-                    {profileData?.username}, {profileData?.birthday}
+                    {profileData?.username}
+                    {profileData?.birthday ? `, ${getTanggal(profileData?.birthday)}` : ''}
                   </h5>
                   <div className="info-profile-zodiac">
                     {profileData?.horoscope && (
@@ -159,7 +169,8 @@ export default function UpdateProfileAbout() {
               <div className="info-profile-user-thumbnail">
                 <div className="items-profile">
                   <h5>
-                    {profileData?.username}, {profileData?.birthday}
+                    {profileData?.username}
+                    {profileData?.birthday ? `, ${getTanggal(profileData?.birthday)}` : ''}
                   </h5>
                   <div className="info-profile-zodiac">
                     {profileData?.horoscope && (
