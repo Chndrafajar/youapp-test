@@ -16,11 +16,10 @@ export default function UpdateProfileAbout() {
 
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // Fungsi untuk menangani perubahan pada input file
   const handleImageChange = (event) => {
-    const file = event.target.files[0]; // Mengambil file gambar yang dipilih oleh pengguna
+    const file = event.target.files[0];
     if (file) {
-      setSelectedImage(URL.createObjectURL(file)); // Menetapkan URL gambar yang dipilih ke state selectedImage
+      setSelectedImage(URL.createObjectURL(file));
     }
   };
 
@@ -42,7 +41,6 @@ export default function UpdateProfileAbout() {
     setLoading(true);
     const token = auth.access_token;
 
-    // Konversi height dan weight ke angka
     const dataToSubmit = {
       ...formData,
       height: parseFloat(formData.height),
@@ -82,7 +80,7 @@ export default function UpdateProfileAbout() {
         };
         const response = await axiosInstance.get('/api/getProfile', config);
         if (response.data.data) {
-          const { name, birthday, height, weight } = response.data.data; // Mengubah 'response.data.jobs' menjadi 'response.data.data'
+          const { name, birthday, height, weight } = response.data.data;
           setFormData({
             name,
             birthday,

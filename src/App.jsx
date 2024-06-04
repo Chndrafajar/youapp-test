@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
-import nprogress from 'nprogress'; // Import nprogress
-import 'nprogress/nprogress.css'; // Import nprogress CSS
+import nprogress from 'nprogress';
+import 'nprogress/nprogress.css';
 
 import LoginPages from './pages/LoginPages';
 import RegisterPages from './pages/RegisterPages';

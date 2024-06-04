@@ -8,7 +8,6 @@ import swal from 'sweetalert';
 
 export default function CreateProfileInterest() {
   const [interest, setInterest] = useState([]);
-  // const [birthday, setBirthday] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -16,7 +15,6 @@ export default function CreateProfileInterest() {
   const navigate = useNavigate();
 
   const [profileData, setProfileData] = useState(null);
-  const [birthday, setBirthday] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -66,7 +64,6 @@ export default function CreateProfileInterest() {
     setLoading(true);
     const token = auth.access_token;
 
-    // Data yang akan dikirim hanya 'interests'
     const dataToSubmit = {
       interests: interest,
       birthday: profileData?.birthday,

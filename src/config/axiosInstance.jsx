@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'https://techtest.youapp.ai', // Ganti dengan URL API Anda
+  baseURL: 'https://techtest.youapp.ai',
   headers: {
     'Content-Type': 'application/json',
   },
